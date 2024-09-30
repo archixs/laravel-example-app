@@ -14,4 +14,9 @@ class PostController extends Controller
         \Log::debug($posts);
         return view('posts.index', ['allposts' => $posts]);
     }
+
+    public function show($id) {
+        $post = Post::find($id);
+        return view('posts.show', ['singlepost' => $post]);
+    }
 }
